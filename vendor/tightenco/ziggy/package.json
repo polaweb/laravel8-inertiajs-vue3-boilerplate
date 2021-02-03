@@ -1,0 +1,62 @@
+{
+    "name": "ziggy-js",
+    "version": "1.0.4",
+    "description": "Use your Laravel named routes in JavaScript.",
+    "keywords": [
+        "laravel",
+        "routes",
+        "ziggy"
+    ],
+    "homepage": "https://github.com/tighten/ziggy",
+    "bugs": "https://github.com/tighten/ziggy/issues",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Daniel Coulbourne",
+            "email": "daniel@tighten.co"
+        },
+        {
+            "name": "Jake Bathman",
+            "email": "jake@tighten.co"
+        },
+        {
+            "name": "Jacob Baker-Kretzmar",
+            "email": "jacob@tighten.co"
+        }
+    ],
+    "files": [
+        "src/js",
+        "dist"
+    ],
+    "source": "src/js/index.js",
+    "main": "dist/index.js",
+    "umd:main": "dist/index.js",
+    "unpkg": "dist/index.js",
+    "browser": "dist/index.js",
+    "module": "dist/index.m.js",
+    "esmodule": "dist/index.es.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/tighten/ziggy.git"
+    },
+    "scripts": {
+        "build": "microbundle --name route --format modern,es,umd --external none",
+        "watch": "npm run build watch",
+        "build:npm": "microbundle --name route --format modern,es,umd",
+        "test": "jest",
+        "prepublishOnly": "npm run build:npm"
+    },
+    "mangle": {
+        "regex": "^_(?!query)"
+    },
+    "dependencies": {
+        "qs": "^6.8.0"
+    },
+    "devDependencies": {
+        "@babel/preset-env": "^7.11.0",
+        "babel-preset-power-assert": "^3.0.0",
+        "jest": "^26.2.2",
+        "microbundle": "^0.12.3",
+        "power-assert": "^1.6.1"
+    }
+}
